@@ -1,0 +1,18 @@
+body {
+  background-color: #0009B2;
+  margin: 0;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+#quote-container {
+  margin: 0 auto;
+  width: 40vw;
+  height: 40vh;
+  background-color: #747AFF;
+}
