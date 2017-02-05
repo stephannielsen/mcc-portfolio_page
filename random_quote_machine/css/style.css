@@ -1,6 +1,7 @@
 body {
   background-color: #0009B2;
   margin: 0;
+  font-family: "Roboto Slab", serif;
 }
 
 #main {
@@ -12,7 +13,10 @@ body {
 
 #quote-container {
   margin: 0 auto;
-  width: 40vw;
-  height: 40vh;
+  max-width: 60vw;
   background-color: #747AFF;
+}
+
+#author {
+  font-family: "Roboto", sans-serif;
 }

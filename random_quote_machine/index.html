@@ -2,22 +2,63 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Stephan's Quote Machine</title>
-    <meta name="description" content="Simple but fancy quote machine.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-  </head>
-  <body>
-    <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Stephan's Quote Machine</title>
+  <meta name="description" content="Simple but fancy quote machine.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script>
+      var getQuote = () => {
+        $.getJSON("http://quotes.stormconsultancy.co.uk/random.json", function (json) {
+          $("#quote").html(json.quote);
+          $("#author").html(json.author);
+        });
+      }
+      $(document).ready(function () {
+        getQuote();
+        $("#getQuote").on("click", function() {
+          getQuote();
+        });
+      });
+    </script>
+</head>
+
+<body>
+  <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div id="main">
-      <div id="quote-container">
+  <div id="main">
+    <div id="quote-container">
+      <div id="quote">
+
       </div>
+      <div id="author">
+
+      </div>
+      <div id="footer">
+        <button type="button" id="getQuote">Another one!</button>
+      </div>
+      <!--
+        TODO: button to fetch new quote
+        TODO: Change color by some random generator to well complementing colors
+        TODO: Use material design icon for quote?
+        TODO: twitter icon to tweet the quote
+        TODO: build a fakify button/version that mashes a quote with the author of another quote
+        TODO: loading icon while fetching quote
+        -->
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
