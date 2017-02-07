@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto Slab">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
     <script>
@@ -39,7 +39,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
   <div id="main">
-    <div id="quote-container">
+    <div id="quote-container" class="card-3">
       <div id="quote">
 
       </div>
@@ -47,16 +47,20 @@
 
       </div>
       <div id="footer">
-        <button type="button" id="getQuote">Another one!</button>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <button type="button" id="getQuote" class="btn"><span><i class="material-icons">&#xE5D5;</i></span></button>
       </div>
       <!--
-        TODO: button to fetch new quote
         TODO: Change color by some random generator to well complementing colors
         TODO: Use material design icon for quote?
         TODO: twitter icon to tweet the quote
         TODO: build a fakify button/version that mashes a quote with the author of another quote
         TODO: loading icon while fetching quote
         -->
+    </div>
+    <div id="copyright">
+      &copy; Stephan Nielsen
     </div>
   </div>
 </body>
