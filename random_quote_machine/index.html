@@ -19,16 +19,58 @@
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
     <script>
-      var getQuote = () => {
+      function createCORSRequest(method, url) {
+        var xhr = new XMLHttpRequest();
+        if ("withCredentials" in xhr) {
+
+          // Check if the XMLHttpRequest object has a "withCredentials" property.
+          // "withCredentials" only exists on XMLHTTPRequest2 objects.
+          xhr.open(method, url, true);
+
+        } else if (typeof XDomainRequest != "undefined") {
+
+          // Otherwise, check if XDomainRequest.
+          // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+          xhr = new XDomainRequest();
+          xhr.open(method, url);
+
+        } else {
+
+          // Otherwise, CORS is not supported by the browser.
+          xhr = null;
+
+        }
+        return xhr;
+      }
+
+      // var xhr = createCORSRequest('GET', url);
+      // if (!xhr) {
+      //   throw new Error('CORS not supported');
+      // }
+
+
+
+      function getQuote() {
         $.getJSON("http://quotes.stormconsultancy.co.uk/random.json", function (json) {
           $("#quote").html(json.quote);
           $("#author").html(json.author);
         });
       }
+
+      function getRant() {
+        $.getJSON("https://www.devrant.io/api/devrant/rants/surprise?app=3&callback=?", function(json) {
+          $("#quote").html(json.rant.text);
+          $("#author").html(json.rant.user_username);
+        })
+      }
       $(document).ready(function () {
-        getQuote();
+        // getQuote();
+        getRant();
         $("#getQuote").on("click", function() {
           getQuote();
+        });
+        $("#getRant").on("click", function() {
+          getRant();
         });
       });
     </script>
@@ -50,12 +92,13 @@
         <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
         <button type="button" id="getQuote" class="btn"><span><i class="material-icons">&#xE5D5;</i></span></button>
+        <button type="button" id="getRant" class="btn"><span><img src="img/devrant.png" alt="Get! rant!"></span></button>
       </div>
       <!--
         TODO: Change color by some random generator to well complementing colors
         TODO: Use material design icon for quote?
         TODO: twitter icon to tweet the quote
-        TODO: build a fakify button/version that mashes a quote with the author of another quote
+        TODO: add switch to exchange quote source to be devRant
         TODO: loading icon while fetching quote
         -->
     </div>
