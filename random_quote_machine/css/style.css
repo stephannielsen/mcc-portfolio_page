@@ -58,7 +58,7 @@ body {
 .btn {
   margin: 1.5rem;
   overflow: hidden;
-
+  font-size: 1.3rem;
   border-width: 0;
   outline: none;
   border-radius: 2px;
