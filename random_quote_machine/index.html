@@ -15,32 +15,11 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto Slab">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
-    <script>
-      function getQuote() {
-        $("#refreshIcon").addClass("fa-spin");
-        $.getJSON("http://quotes.stormconsultancy.co.uk/random.json", function (json) {
-          var currentQuote = json.quote;
-          var currentQuoteAuthor = json.author;
-          $("#quote").html('<i class="material-icons fa-rotate-180">format_quote</i>'
-            + currentQuote
-            + '<i class="material-icons">format_quote</i>');
-          $("#author").html(currentQuoteAuthor);
-          $("#refreshIcon").removeClass("fa-spin");
-          $("#tweet").attr('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text='
-            + encodeURIComponent('"' + currentQuote + '"' + currentQuoteAuthor));
-        });
-      }
-      $(document).ready(function () {
-        getQuote();
-        $("#getQuote").on("click", function() {
-          getQuote();
-        });
-      });
-    </script>
+  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -50,21 +29,16 @@
   <div id="main">
     <div id="quote-container" class="card-3">
       <div id="quote">
-        
+        Loading...
+        <!-- quote comes here -->
       </div>
       <div id="author">
-
+        <!-- author comes here -->
       </div>
       <div id="footer">
         <a id="tweet" target="_blank"><button type="button" class="btn"><span><i class="fa fa-twitter" aria-hidden="false"></i></span></button></a>
         <button type="button" id="getQuote" class="btn"><span><i id="refreshIcon" class="fa fa-refresh" aria-hidden="false"></i></span></button>
       </div>
-      <!--
-        TODO: Change color by some random generator to well complementing colors
-        TODO: animate change of color
-        TODO: button colors (maybe use css hue for using a complement automatically everywhere regarding the background?)
-        TODO: button alignments
-        -->
     </div>
     <div id="copyright">
       &copy; Stephan Nielsen

@@ -1,7 +1,8 @@
 body {
-  background-color: #0009B2;
   margin: 0;
   font-family: "Roboto Slab", serif;
+  transition: background-color .3s;
+  transition: color .3s;
 }
 
 #main {
@@ -19,11 +20,9 @@ body {
 }
 
 #quote-container {
-  background-color: #747AFF;
   border-radius: 0.4rem;
-  /*margin: 1rem;
-  display: inline-block;
-  position: relative;*/
+  transition: background-color .3s;
+  transition: color .3s;
 }
 
 .card-3 {
@@ -49,14 +48,12 @@ body {
 }
 
 #copyright {
-  color: #747AFF;
   font-size: 0.7rem;
   text-align: center;
   background: none;
 }
 
 .btn {
-  margin: 1.5rem;
   overflow: hidden;
   font-size: 1.3rem;
   border-width: 0;
@@ -64,18 +61,8 @@ body {
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   
-  background-color: #2ecc71;
-  color: #ecf0f1;
-  
   transition: background-color .3s;
-}
-
-.btn:hover {
-  background-color: #27ae60;
-}
-
-.btn:visited {
-  background-color: #2ecc71;
+  transition: color .3s;
 }
 
 .btn > * {
