@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto Slab">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -29,11 +30,16 @@
   <div id="main">
     <div id="quote-container" class="card-3">
       <div id="quote">
-        Loading...
         <!-- quote comes here -->
+        <i class="material-icons fa-rotate-180">format_quote</i>&nbsp;For CodePen I have to use https:// to retrieve the quote from here,
+         but this is blocked by default. Open this link <a href="https://quotes.stormconsultancy.co.uk/random.json" target="_blank">https://quotes.stormconsultancy.co.uk/random.json</a>,
+        make an exception for the certificate and reload the pen. A quote should appear.&nbsp;<i class="material-icons">format_quote</i>
+        <br><br>
+        <small>Unfortunately, Firefox throw a security error because of jQuery. Works fine in Chrome, IE or outside of CodePen though.</small>
       </div>
       <div id="author">
         <!-- author comes here -->
+        Stephan
       </div>
       <div id="footer">
         <a id="tweet" target="_blank"><button type="button" class="btn"><span><i class="fa fa-twitter" aria-hidden="false"></i></span></button></a>
