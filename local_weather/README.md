@@ -1,3 +1,7 @@
-Show Local Weather - FreeCodeCamp Challenge
+# Show Local Weather - FreeCodeCamp Challenge
 
-WIP WIP
+To debug this webpage:
+
+- Install NodeJS
+- Run `npm install` in this folder
+- Run `npm start` opens index.html in FF/Chrome
