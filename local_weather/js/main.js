@@ -5,28 +5,23 @@ function getLocation() {
 }
 
 function handleError(error) {
-  var alertMessage = "";
-  switch (error.code) {
-    case error.PERMISSION_DENIED: alertMessage = "User did not share location.";
-      break;
-    case error.POSITION_UNAVAILABLE: alertMessage = "Could not detect current position.";
-      break;
-    case error.TIMEOUT: alertMessage = "Retrieving position timed out.";
-      break;
-    default: alertMessage = "Unknown error.";
-      break;
-  }
-  alertMessage += "Code: " + error.code + ", " + error.message;
-  alert(alertMessage);
+  $("#weather").html("Sorry, I don't know where you are...did you share your location?");
 }
 
 function handlePosition(position) {
   var lat = position.coords.latitude;
   var lon = position.coords.longitude;
 
-  $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + openWeatherMapApiKey, (json) => {
-    var result = json;
-    alert(JSON.stringify(result));
+  var weatherMapUrl = "http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + lat + "&lon=" + lon + "&appid=" + openWeatherMapApiKey;
+
+  $.getJSON(weatherMapUrl, (weather) => {
+    var country = weather.sys.country;
+    var city = weather.name;
+    var temperature = weather.main.temp;
+    var cityLink = '<a target="_blank" href="https://maps.google.com/?q=' + lat + ',' + lon + '">' + city + '</a>';
+    $("#weather").html(temperature + "°C, " + cityLink + " (" + country + ")");
+    // var result = json;
+    // alert(JSON.stringify(result));
     //     {"coord":{"lon":139,"lat":35},
     // "sys":{"country":"JP","sunrise":1369769524,"sunset":1369821049},
     // "weather":[{"id":804,"main":"clouds","description":"overcast clouds","icon":"04n"}],
