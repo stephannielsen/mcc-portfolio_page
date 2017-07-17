@@ -1,3 +1,7 @@
+var currentUnitIndex = 0;
+var tempInCText;
+var tempInFText;
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(handlePosition, handleError);
@@ -6,6 +10,18 @@ function getLocation() {
 
 function handleError(error) {
   $("#weather").html("Sorry, I don't know where you are...did you share your location?");
+}
+
+function switchUnit() {
+  currentUnitIndex = currentUnitIndex == 0 ? 1 : 0;
+  if (currentUnitIndex === 0) {
+    $("#details").html(tempInCText);
+    $("#temp-unit").html("in °F");
+  }
+  else {
+    $("#details").html(tempInFText);
+    $("#temp-unit").html("in °C");
+  }
 }
 
 function handlePosition(position) {
@@ -17,25 +33,28 @@ function handlePosition(position) {
   $.getJSON(weatherMapUrl, (weather) => {
     var country = weather.sys.country;
     var city = weather.name;
-    var temperature = weather.main.temp;
+    var tempInC = weather.main.temp;
+    var tempInF = tempInC * 9 / 5 + 32;
     var cityLink = '<a target="_blank" href="https://maps.google.com/?q=' + lat + ',' + lon + '">' + city + '</a>';
-    $("#weather").html(temperature + "°C, " + cityLink + " (" + country + ")");
-    // var result = json;
-    // alert(JSON.stringify(result));
-    //     {"coord":{"lon":139,"lat":35},
-    // "sys":{"country":"JP","sunrise":1369769524,"sunset":1369821049},
-    // "weather":[{"id":804,"main":"clouds","description":"overcast clouds","icon":"04n"}],
-    // "main":{"temp":289.5,"humidity":89,"pressure":1013,"temp_min":287.04,"temp_max":292.04},
-    // "wind":{"speed":7.31,"deg":187.002},
-    // "rain":{"3h":0},
-    // "clouds":{"all":92},
-    // "dt":1369824698,
-    // "id":1851632,
-    // "name":"Shuzenji",
-    // "cod":200}
+    tempInCText = tempInC + " °C, " + cityLink + " (" + country + ")";
+    tempInFText = tempInF + " °F, " + cityLink + " (" + country + ")"
+    $("#details").html(tempInCText);
+
+    var map = L.map('map').setView([lat, lon], 13);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox.streets',
+      accessToken: mapboxApiKey
+    }).addTo(map);
+    var marker = L.marker([lat, lon]).addTo(map);
   });
 }
 
 $(document).ready(function () {
+  $("#temp-unit").html(" in " + temperatureUnits[currentUnitIndex == 0 ? 1 : 0]);
+    $("#switchUnit").on("click", function () {
+    switchUnit();
+  });
   getLocation();
 });
