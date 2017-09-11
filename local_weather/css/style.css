@@ -98,6 +98,6 @@ body {
   opacity: 0.6;
 }
 
-#weatherIcon {
+.weatherIcon {
   width: 2rem;
 }
