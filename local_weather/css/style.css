@@ -24,11 +24,11 @@ body {
 }
 
 #main div {
-  padding: 0.5rem;
   line-height: 1.5rem;
 }
 
 #map-container {
+  padding: 0.5rem;
   border-radius: 0.4rem;
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
@@ -41,17 +41,19 @@ body {
 }
 
 #map {
-   font-size: 1.3rem;
+   /* font-size: 1.3rem; */
    height: 380px;
 }
 
 #details {
+  padding: 0.5rem;
   font-family: "Roboto", sans-serif;
   text-align: right;
   font-size: 1rem;
 }
 
 #footer {
+  padding: 0.5rem;
   text-align: right;
 }
 

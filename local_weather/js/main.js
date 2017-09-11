@@ -1,6 +1,7 @@
 var currentUnitIndex = 0;
 var tempInCText;
 var tempInFText;
+var marker;
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -15,11 +16,11 @@ function handleError(error) {
 function switchUnit() {
   currentUnitIndex = currentUnitIndex == 0 ? 1 : 0;
   if (currentUnitIndex === 0) {
-    $("#details").html(tempInCText);
+    marker.setPopupContent(tempInCText);
     $("#temp-unit").html("in °F");
   }
   else {
-    $("#details").html(tempInFText);
+    marker.setPopupContent(tempInFText);
     $("#temp-unit").html("in °C");
   }
 }
@@ -34,11 +35,9 @@ function handlePosition(position) {
     var country = weather.sys.country;
     var city = weather.name;
     var tempInC = weather.main.temp;
-    var tempInF = tempInC * 9 / 5 + 32;
-    var cityLink = '<a target="_blank" href="https://maps.google.com/?q=' + lat + ',' + lon + '">' + city + '</a>';
-    tempInCText = tempInC + " °C, " + cityLink + " (" + country + ")";
-    tempInFText = tempInF + " °F, " + cityLink + " (" + country + ")"
-    $("#details").html(tempInCText);
+    var tempInF = (tempInC * 9 / 5 + 32).toFixed(2);
+    tempInCText = city + ' (' + country + ')<br>' + tempInC + ' °C';
+    tempInFText = city + ' (' + country + ')<br>' + tempInF + ' °F'
 
     var map = L.map('map').setView([lat, lon], 13);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -47,7 +46,9 @@ function handlePosition(position) {
       id: 'mapbox.streets',
       accessToken: mapboxApiKey
     }).addTo(map);
-    var marker = L.marker([lat, lon]).addTo(map);
+    marker = L.marker([lat, lon]).addTo(map)
+      .bindPopup(tempInCText)
+      .openPopup();
   });
 }
 
