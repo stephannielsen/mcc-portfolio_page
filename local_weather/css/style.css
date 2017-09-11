@@ -93,7 +93,11 @@ body {
 }
 
 #mainOld h1 {
-    color: #000;
-    font-size: 6em;
-    opacity: 0.6;
+  color: #000;
+  font-size: 6em;
+  opacity: 0.6;
+}
+
+#weatherIcon {
+  width: 2rem;
 }

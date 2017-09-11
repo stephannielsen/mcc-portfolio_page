@@ -2,6 +2,7 @@ var currentUnitIndex = 0;
 var tempInCText;
 var tempInFText;
 var marker;
+var iconBaseUrl = 'http://openweathermap.org/img/w/';
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -36,8 +37,10 @@ function handlePosition(position) {
     var city = weather.name;
     var tempInC = weather.main.temp;
     var tempInF = (tempInC * 9 / 5 + 32).toFixed(2);
-    tempInCText = '<b>' + tempInC + ' °C</b><br>' + city + ' (' + country + ')';
+    var iconUrl = iconBaseUrl + weather.weather[0].icon + '.png';
+    tempInCText = '<img id="weatherIcon" src="' + iconUrl + '" alt="' + weather.weather[0].main + '" /><b>' + tempInC + ' °C</b><br>' + city + ' (' + country + ')';
     tempInFText = '<b>' + tempInF + ' °F</b><br>' + city + ' (' + country + ')';
+
 
     var map = L.map('map').setView([lat, lon], 13);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
