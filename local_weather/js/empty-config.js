@@ -1,0 +1,2 @@
+var mapboxApiKey = "";
+var temperatureUnits = [];
