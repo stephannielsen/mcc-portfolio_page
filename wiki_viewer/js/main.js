@@ -37,6 +37,8 @@ function fetchData() {
     jsonp: "callback",
     success: function(data) {
       var wikiPages = data.query.pages;
+
+
       
         var fullHtml = "";
         for (var page in wikiPages) {
@@ -76,5 +78,21 @@ function fetchData() {
 }
 
 $(document).ready(function () {
-  fetchData();
+  // fetchData();
+  
+  $('.post-module').hover(function() {
+    $(this).find('.description').stop().animate({
+      height: "toggle",
+      opacity: "toggle"
+    }, 300);
+  });
 });
+
+// $(window).load(function() {
+//   $('.post-module').hover(function() {
+//     $(this).find('.description').stop().animate({
+//       height: "toggle",
+//       opacity: "toggle"
+//     }, 300);
+//   });
+// });
