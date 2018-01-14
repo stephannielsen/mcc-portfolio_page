@@ -45,32 +45,7 @@ body {
   height: 400px;
   overflow: hidden;
 }
-.post-module .thumbnail .date {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1;
-  background: #e74c3c;
-  width: 55px;
-  height: 55px;
-  padding: 12.5px 0;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  border-radius: 100%;
-  color: #FFFFFF;
-  font-weight: 700;
-  text-align: center;
-  -webkti-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.post-module .thumbnail .date .day {
-  font-size: 18px;
-}
-.post-module .thumbnail .date .month {
-  font-size: 12px;
-  text-transform: uppercase;
-}
+
 .post-module .thumbnail img {
   display: block;
   width: 120%;
@@ -95,18 +70,7 @@ body {
   -o-transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
   transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
 }
-.post-module .post-content .category {
-  position: absolute;
-  top: -34px;
-  left: 0;
-  background: #e74c3c;
-  padding: 10px 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: 600;
-  display:;
-  text-transform: uppercase;
-}
+
 .post-module .post-content .title {
   margin: 0;
   padding: 0 0 10px;
@@ -131,7 +95,7 @@ body {
   margin: 30px 0 0;
   color: #999999;
 }
-.post-module .post-content .post-meta .timestamp {
+.post-module .post-content .post-meta .read_more {
   margin: 0 16px 0 0;
 }
 .post-module .post-content .post-meta a {

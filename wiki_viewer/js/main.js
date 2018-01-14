@@ -46,15 +46,6 @@ function fetchData() {
         postModule.setAttribute("class", "post-module");
         var thumbnail = document.createElement("div");
         thumbnail.setAttribute("class", "thumbnail");
-        // var date = document.createElement("div");
-        // date.setAttribute("class", "date");
-        // var day = document.createElement("div");
-        // day.setAttribute("class", "day");
-        // var month = document.createElement("div");
-        // month.setAttribute("class", "month");
-        // date.appendChild(day);
-        // date.appendChild(month);
-        // thumbnail.appendChild(date);
         var image = document.createElement("img");
         if (wikiPages[wikiPage].hasOwnProperty("thumbnail")) {
           image.setAttribute("src", wikiPages[wikiPage].thumbnail.source);
@@ -69,10 +60,6 @@ function fetchData() {
 
         var postContent = document.createElement("div");
         postContent.setAttribute("class", "post-content");
-        // var category = document.createElement("div");
-        // category.setAttribute("class", "category");
-        // category.innerHTML = "Photos";
-        // postContent.appendChild(category);
         var title = document.createElement("h1");
         title.setAttribute("class", "title");
         title.innerHTML = wikiPages[wikiPage].title;
@@ -89,14 +76,10 @@ function fetchData() {
 
         var postMeta = document.createElement("div");
         postMeta.setAttribute("class", "post-meta");
-        var timestamp = document.createElement("span");
-        timestamp.setAttribute("class", "timestamp");
-        timestamp.innerHTML = '<a href="' + linkUrl + wikiPages[wikiPage].title + '" target="_blank">Read more...</a>';
-        var comments = document.createElement("span");
-        comments.setAttribute("class", "comments");
-        comments.innerHTML = '<i class="fa fa-comments"></i><a href="#"> 39 comments</a>';
-        postMeta.appendChild(timestamp);
-        postMeta.appendChild(comments);
+        var readMore = document.createElement("span");
+        readMore.setAttribute("class", "read_more");
+        readMore.innerHTML = '<a href="' + linkUrl + wikiPages[wikiPage].title + '" target="_blank">Read more...</a>';
+        postMeta.appendChild(readMore);
         postContent.appendChild(postMeta);
 
         postModule.appendChild(postContent);
@@ -110,7 +93,7 @@ function fetchData() {
       // add columns to the container
       columns.forEach(column => {
         column.setAttribute("class", "column");
-        var container = document.getElementById('container');
+        var container = document.getElementById('cards');
         container.appendChild(column);
       });
     }
