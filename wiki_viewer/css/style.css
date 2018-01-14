@@ -17,6 +17,7 @@ body {
   background: #FFFFFF;
   min-width: 270px;
   height: 470px;
+  margin-bottom: 20px;
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -40,7 +41,7 @@ body {
   opacity: .6;
 }
 .post-module .thumbnail {
-  background: #000000;
+  background: #fff;
   height: 400px;
   overflow: hidden;
 }
@@ -103,6 +104,7 @@ body {
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 600;
+  display:;
   text-transform: uppercase;
 }
 .post-module .post-content .title {
@@ -142,7 +144,7 @@ body {
   opacity: 1 !important;
 }
 .container {
-  max-width: 800px;
+  max-width: 880px;
   min-width: 640px;
   margin: 0 auto;
 }
