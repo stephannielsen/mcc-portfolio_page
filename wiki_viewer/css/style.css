@@ -1,5 +1,14 @@
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#cards > div {
+  flex: 0 1 10%;
+  margin: 1em;
+}
+
 .container {
-  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -16,6 +25,7 @@ body {
   display: block;
   background: #FFFFFF;
   min-width: 270px;
+  max-width: 400px;
   height: 470px;
   margin-bottom: 20px;
   -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
@@ -108,15 +118,11 @@ body {
   opacity: 1 !important;
 }
 .container {
-  max-width: 880px;
-  min-width: 640px;
   margin: 0 auto;
 }
 .container:before,
 .container:after {
   content: '';
-  display: block;
-  clear: both;
 }
 .container .column {
   width: 50%;

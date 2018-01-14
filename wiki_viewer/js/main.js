@@ -32,14 +32,6 @@ function fetchData() {
     jsonp: "callback",
     success: function(data) {
       var wikiPages = data.query.pages; 
-      
-      // setting up the columns
-      var numberOfColumns = 5;
-      var columns = [];
-      while (columns.length < numberOfColumns)
-        columns.push(document.createElement("div"));
-      
-      var columnIndex = 0;
 
       for (var wikiPage in wikiPages) {
         var postModule = document.createElement("div");
@@ -84,18 +76,10 @@ function fetchData() {
 
         postModule.appendChild(postContent);
 
-        //add the postmodule to the correct column
-        columns[columnIndex].appendChild(postModule);
-        //calculate next column index and care for column break
-        columnIndex = (columnIndex + 1) % numberOfColumns;
-      }
 
-      // add columns to the container
-      columns.forEach(column => {
-        column.setAttribute("class", "column");
         var container = document.getElementById('cards');
-        container.appendChild(column);
-      });
+        container.appendChild(postModule);
+      }
     }
   } );
 }
