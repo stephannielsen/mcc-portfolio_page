@@ -7,7 +7,6 @@
 
 var baseApiUrl = "https://en.wikipedia.org/w/api.php";
 var linkUrl = "https://wikipedia.org/wiki/";
-var initialSearchTerm = "flensburg";
 
 
 //https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages|extracts&generator=search&piprop=thumbnail&pithumbsize=200&exsentences=2&gsrsearch=flensburg&gsrnamespace=0&gsrinfo=totalhits|suggestion|rewrittenquery&gsrprop=size|wordcount|timestamp|snippet&exintro
@@ -77,31 +76,35 @@ function fetchData(searchTerm) {
           postContent.appendChild(postMeta);
   
           postModule.appendChild(postContent);
-  
+          
+          $('#status').css("display", "none");
           container.appendChild(postModule);
         }
       }
       else {
-        var nothingFound = document.createElement("p");
-        nothingFound.innerHTML = 'Wikipedia does not know what you are looking for <i class="fa fa-frown-o" aria-hidden="true"></i>';
-        container.appendChild(nothingFound);
+        var status = $('#status');
+        status.html('<p><i class="material-icons">sentiment_very_dissatisfied</i><br>Nothing found...</p>');
+        status.css("display", "block");
       }
+      
+      $('.post-module').hover(function() {
+        $(this).find('.description').stop().animate({
+          height: "toggle",
+          opacity: "toggle"
+        }, 300);
+      });
     }
   } );
 }
 
-$(document).ready(function () {
-  fetchData(initialSearchTerm);
-});
-
 $(window).on("load", function() {
-  $('.post-module').hover(function() {
-    $(this).find('.description').stop().animate({
-      height: "toggle",
-      opacity: "toggle"
-    }, 300);
-  });
-  $('#search_button').click(function() {
-    fetchData($('#search_term').val());
+  $('#search_form').on('submit', function(e){
+      e.preventDefault();
+      
+      var status = $('#status');
+      status.html('<p><i class="material-icons">sentiment_satisfied</i><br>Rumble rumble rumble...</p>');
+      status.css("display", "block");
+
+      fetchData($('#search_term').val());
   });
 });
