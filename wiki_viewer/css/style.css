@@ -27,6 +27,58 @@
   font-size: 0.8em;
 }
 
+.load-more {
+  position: relative;
+  /* z-index: 1; */
+  display: block;
+  /* background: #FFFFFF; */
+  min-width: 270px;
+  max-width: 400px;
+  height: 470px;
+  margin-bottom: 20px;
+  /* -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s; */
+}
+
+.load-more p {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+a.button {
+  display: block;
+  position: relative;
+  width: 120px;
+  padding: 0;
+  margin: 0 auto;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s ;
+  text-decoration: none;
+  background: #666666;
+}
+
+a.button:visited {
+  text-decoration: none;
+}
+
+/* FADE */
+.button:hover {
+  background: #414141;
+}
 
 #search_container {
   position: relative;

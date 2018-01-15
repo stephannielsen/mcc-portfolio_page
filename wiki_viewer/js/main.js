@@ -13,16 +13,19 @@ var linkUrl = "https://wikipedia.org/wiki/";
 
 var queryTemplate = "action=query&format=json&prop=pageimages|extracts" +
             "&generator=search&piprop=thumbnail&pithumbsize=500&exsentences=2" +
-            "&gsrsearch=searchTerm&gsrnamespace=0" +
+            "&gsrsearch=<searchTerm>&gsrnamespace=0" +
             "&gsrinfo=totalhits|suggestion|rewrittenquery" +
             "&gsrprop=size|wordcount|timestamp|snippet" +
-            "&exintro";
+            "&exintro" +
+            "&gsroffset=<grsoffset>";
 
-function fetchData(searchTerm) {
+
+function fetchData(searchTerm, offset) {
   var container = document.getElementById('cards');
-  $(cards).empty();
+  if (offset === 0)
+    $(container).empty();
   // inject the search term into the query template
-  var query = queryTemplate.replace("searchTerm", searchTerm);
+  var query = queryTemplate.replace("<searchTerm>", searchTerm).replace("<grsoffset>", offset);
   $.ajax( {
 
     url: baseApiUrl,
@@ -80,6 +83,16 @@ function fetchData(searchTerm) {
           $('#status').css("display", "none");
           container.appendChild(postModule);
         }
+        var loadMore = document.createElement("div");
+        loadMore.setAttribute("class", "load-more");
+        loadMore.innerHTML = '<p><a href="#" id="load_more" title="Load More" class="button">Load More</a></p>';
+        container.appendChild(loadMore);
+        $('#load_more').on("click", function(e) {
+          e.preventDefault();
+          loadMore.outerHTML = "";
+          fetchData(searchTerm, data.continue.gsroffset)
+
+        })
       }
       else {
         var status = $('#status');
@@ -105,6 +118,6 @@ $(window).on("load", function() {
       status.html('<p><i class="material-icons">sentiment_satisfied</i><br>Rumble rumble rumble...</p>');
       status.css("display", "block");
 
-      fetchData($('#search_term').val());
+      fetchData($('#search_term').val(), 0);
   });
 });
