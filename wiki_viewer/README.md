@@ -1,9 +1,9 @@
 # Wiki Viewer - FreeCodeCamp Challenge
 
-To run this webpage:
+## How To Run Locally
+
+To run this webpage locally:
 
 - Install NodeJS
 - Run `npm install` in this folder
 - Run `npm start` opens index.html in FF/Chrome
-
-https://codepen.io/andytran/pen/BNjymy?q=cards&limit=all&type=type-pens
