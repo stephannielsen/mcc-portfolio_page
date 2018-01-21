@@ -79,7 +79,7 @@ WikiViewer = {
         '<a href="' +
         WikiViewer.linkUrl +
         wikiPages[wikiPage].title +
-        '" target="_blank">Read more...</a>';
+        '" target="_blank" rel="noopener">Read more...</a>';
       postMeta.appendChild(readMore);
       postContent.appendChild(postMeta);
 
