@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Wikipedia Viewer</title>
+  <meta name="description" content="Search Wikipedia!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <div class="container" id="container">
+    <div class="info">
+      <h1>Wikipedia Viewer</h1>
+    </div>
+    <div id="search_container">
+      <form id="search_form">
+      <input id="search_term" type="text" placeholder="Search" required />
+      <button id="search_button" type="submit">➜</button>
+      </form>
+    </div>
+    <div id="random">
+      <p>Random fact? <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener">Click here!</a></p>
+    </div>
+    <div id="status">
+      <p>
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <br>
+        Go go go!
+      </p>
+    </div>
+    <div id="cards">
+      <!-- results go here -->
+    </div>
+    <div class="footer">
+      <span>Made by <a href='https://github.com/stephannielsen'>Stephan Nielsen</a>
+         | Inspired by these CodePens: <a href="https://codepen.io/andytran/pen/BNjymy" target="_blank" rel="noopener">Cards</a> - <a href="https://codepen.io/ImBobby/pen/urJFK" target="_blank" rel="noopener">Search</a>
+      </span>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/wiki-viewer.js"></script>
+</body>
+
+</html>
