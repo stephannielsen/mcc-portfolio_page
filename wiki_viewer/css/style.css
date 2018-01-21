@@ -28,6 +28,12 @@ body {
   font-size: 10em;
 }
 
+#random p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
 .footer {
   position: relative;
   width: 100%;
