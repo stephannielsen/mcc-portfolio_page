@@ -1,0 +1,59 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: lightgray;
+}
+
+h1 {
+    font-weight: 600;
+    text-align: center;
+}
+
+main {
+    width: 50%;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: whitesmoke;
+    border-radius: 0.5em;
+}
+
+main p {
+    text-align: center;
+}
+
+#survey-form {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 0.5em 1em;
+}
+
+#survey-form>input:last-of-type {
+    grid-column: 1/3;
+    justify-self: center;
+}
+
+#survey-form>*:nth-child(odd) {
+    justify-self: right;
+}
+
+#survey-form>*:nth-child(even) {
+    justify-self: left;
+}
+
+#survey-form ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+label.required:before {
+    content: "* ";
+}
+
+footer {
+    font-weight: 300;
+    text-align: center;
+    font-size: 0.8em;
+}

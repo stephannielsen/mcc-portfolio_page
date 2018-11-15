@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boat Survey</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="title">
+            Sailing Training
+        </h1>
+    </header>
+    <main>
+        <p id="description">
+            Let us know about what you want to learn and what you already know.
+        </p>
+        <form id="survey-form">
+            <label class="required" for="name" id="name-label">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <label class="required" for="email" id="email-label">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label class="required" for="number" id="number-label">Age:</label>
+            <input type="number" id="number" name="number" min="14" max="120" placeholder="Enter your age">
+            <label for="phone" id="phone-label">Phone:</label>
+            <input type="text" id="phone" placeholder="Enter your Phone number">
+            <label for="dropdown" id="dropdown-label">Preferred class:</label>
+            <select name="boat-class" id="dropdown">
+                    <option value="" disabled></option>
+                    <option value="laser">Laser</option>
+                    <option value="470">470</option>
+                    <option value="49er">49er</option>
+                    <option value="any">Any</option>
+                </select>
+            <label for="training-level">Training level:</label>
+            <ul>
+                <li><label for="beginner" class="pure-radio"><input type="radio" name="training-level" value="Beginner"> Beginner</label></li>
+                <li><label for="hobby" class="pure-radio"><input type="radio" name="training-level" value="Hobby"> Hobby</label></li>
+                <li><label for="racing" class="pure-radio"><input type="radio" name="training-level" value="Racing"> Racing</label></li>
+                <li><label for="olympic" class="pure-radio"><input type="radio" name="training-level" value="Olympic"> Olympic</label></li>
+            </ul>
+            <label for="contact">Preferred way of contact:</label>
+            <ul>
+                <li><label for="contact-email" class="pure-checkbox"><input type="checkbox" name="contact" value="Email"> Yes, I want to be contacted via email.</label></li>
+                <li><label for="contact-phone" class="pure-checkbox"><input type="checkbox" name="contact" value="Phone"> Yes, I want to be contacted via phone.</label></li>
+            </ul>
+            <label for="comment" id="comment-label">Any comments?</label>
+            <textarea name="comment" id="comment"></textarea>
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </main>
+    <footer>
+        Created by <a href="https://snielsen.de">Stephan Nielsen</a> as part of <a href="https://freecodecamp.org">FreeCodeCamp</a>. See more of my FreeCodeCamp projects on <a href="https://github.com/stephannielsen/my-fcc">GitHub</a>.
+    </footer>
+</body>
+
+</html>
