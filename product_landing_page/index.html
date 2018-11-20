@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fleno Drinks</title>
+    <link href="https://fonts.googleapis.com/css?family=Aldrich:300,400,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <img id="header-img" src="assets/pint.svg" width="50px">
+            <h1>Fleno Drinks</h1>
+        </div>
+        <nav id="nav-bar">
+            <ul>
+                <li><a href="#what" class="nav-link">What?</a></li>
+                <li><a href="#where" class="nav-link">Where?</a></li>
+                <li><a href="#who" class="nav-link">Who?</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="what">
+            <!-- <h2>What?</h2> -->
+            <div id="products">
+                <div class="drink-card">
+                    <img src="assets/pint.svg" width="80px">
+                    <h3>Fleno Beer</h3>
+                    <p>Too roasty, too chocolatey, too sweet, too bitter? Not with Fleno!</p>
+                </div>
+                <div class="drink-card">
+                    <img src="assets/wine.svg" width="80px">
+                    <h3>Fleno Wine</h3>
+                    <p>Right from our lovely fields and mounds in Angeln!</p>
+                </div>
+                <div class="drink-card">
+                    <img src="assets/pure.svg" width="80px">
+                    <h3>Fleno Pure</h3>
+                    <p>For the long and cold nights! Or the short and light summer nights!</p>
+                </div>
+            </div>
+            <div id="subscribe">
+                <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <input type="submit" id="submit" name="submit" value="Get updates!">
+                </form>
+            </div>
+        </section>
+        <section id="where">
+            <h3>
+                In all Fleno Shops!
+            </h3>
+            <div class="gmap_canvas">
+                <iframe id="gmap_canvas" width="500" height="400" src="https://maps.google.com/maps?q=flensburg&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+            <p>Soon - ish!</p>
+        </section>
+        <section id="who">
+            <h3>Who is Fleno?</h3>
+            <iframe id="video" height="320" width="480" src="https://www.youtube-nocookie.com/embed/aKnX5wci404?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            <p>:)</p>
+        </section>
+    </main>
+    <footer>
+        <p>Created by <a href="https://snielsen.de">Stephan Nielsen</a> as part of <a href="https://freecodecamp.org">FreeCodeCamp</a>. See more of my FreeCodeCamp projects on <a href="https://github.com/stephannielsen/my-fcc">GitHub</a>.
+            <br> Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+                title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
+    </footer>
+</body>
+<script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</html>
