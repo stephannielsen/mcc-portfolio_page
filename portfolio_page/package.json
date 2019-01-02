@@ -9,5 +9,8 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "simple-autoreload-server": "^0.2.7"
+    }
 }
