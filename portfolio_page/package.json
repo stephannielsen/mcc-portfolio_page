@@ -4,13 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "autoreload-server -w \"**/**.{html,css,js}\" -b",
+        "start": "live-server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "simple-autoreload-server": "^0.2.7"
-    }
+    "license": "MIT",
+    "devDependencies": {}
 }
